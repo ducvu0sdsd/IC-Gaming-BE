@@ -14,7 +14,7 @@ class LinksController {
             const links = new Links(data)
             await links.save()
             const link = await Links.findOne({title : links.title})
-            link.URL = `https://icgaming.vercel.app/links-${link._id}`
+            link.URL = `https://ic-gaming.vercel.app/links-${link._id}`
             await Links.updateOne({_id : link.id},{URL : link.URL})
             res.json({status : 200})
         } catch (error) {
