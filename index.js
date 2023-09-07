@@ -8,8 +8,6 @@ const route = require('./src/routes')
 const db = require('./src/config/db')
 const cors = require('cors')
 const { format } = require('date-fns')
-const Game = require('./src/app/models/Games')
-const fs = require('fs');
 
 app.use(express.static(path.join(__dirname, 'src/public')))
 app.use(morgan('combined'))

@@ -25,7 +25,6 @@ class LinksController {
     async delete (req, res) {
         try {
             const id = req.body.id
-            console.log(id)
             await Links.deleteOne({_id : id})
             res.json({status : 200})
         } catch (error) {
