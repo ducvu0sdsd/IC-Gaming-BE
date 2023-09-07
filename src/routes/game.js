@@ -4,6 +4,7 @@ const gameController = require('../app/controllers/GameController')
 
 
 router.get('/game-api-v1', gameController.game_api)
+router.get('/get-by-title', gameController.findByTitle)
 router.post('/game-insert', gameController.insert)
 router.post('/game-delete', gameController.detele)
 router.post('/game-update', gameController.update)

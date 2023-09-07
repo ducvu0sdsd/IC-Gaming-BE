@@ -8,6 +8,15 @@ class GameController {
         res.render('game')
     }
 
+    async findByTitle (req, res) {
+        try {
+            const game = await Game.find({title : req.query.title})
+            res.json(game)
+        } catch (error) {
+            res.json({status : 500})
+        }
+    }
+
     // GET /game-api-v1
     async game_api (req, res) {
 
