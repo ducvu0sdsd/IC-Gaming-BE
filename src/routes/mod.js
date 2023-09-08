@@ -11,4 +11,5 @@ router.get('/get-by-criteria-origin', modController.findByOrigin_Criteria)
 router.post('/delete', modController.delete)
 router.post('/update', modController.update)
 router.post('/update-downloads', modController.updateDownloads)
+router.post('/update-views', modController.updateViews)
 module.exports = router

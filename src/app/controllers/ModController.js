@@ -55,6 +55,15 @@ class ModsController {
         }
     }
 
+    async updateViews (req, res) {
+        try {
+            await Mods.updateOne({title : req.body.title},{views : req.body.views})
+            res.json({status : 200})
+        } catch (error) {
+            res.json({status : 500})
+        }
+    }
+
     async findById (req, res) {
         try {
             const mod = await Mods.findById(req.query.id)
