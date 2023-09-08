@@ -9,8 +9,17 @@ class ModsController {
 
     async insert (req, res) {
         try {
+            let arr = []
             const data = req.body
+            req.files.forEach(item => {
+                arr.push(item.path)
+            }) 
+            const arr1 = data.linkDownload.split('!');
+
             const mods = new Mods(data)
+            mods.images = arr
+            mods.linkDownload = arr1
+
             await mods.save()
             res.json({status : 200})
         } catch (error) {
