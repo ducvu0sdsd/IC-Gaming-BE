@@ -46,6 +46,15 @@ class ModsController {
         }
     }
 
+    async updateDownloads (req, res) {
+        try {
+            await Mods.updateOne({title : req.body.title},{downloads : req.body.download})
+            res.json({status : 200})
+        } catch (error) {
+            res.json({status : 500})
+        }
+    }
+
     async findById (req, res) {
         try {
             const mod = await Mods.findById(req.query.id)
@@ -54,6 +63,7 @@ class ModsController {
             res.json({status : 500})
         }
     }
+
 
     async findByOrigin (req, res) {
         try {
