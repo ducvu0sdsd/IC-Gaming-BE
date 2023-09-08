@@ -48,7 +48,7 @@ class ModsController {
 
     async updateDownloads (req, res) {
         try {
-            await Mods.updateOne({title : req.body.title},{downloads : req.body.download})
+            await Mods.updateOne({title : req.body.title},{downloads : req.body.downloads})
             res.json({status : 200})
         } catch (error) {
             res.json({status : 500})
