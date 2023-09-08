@@ -54,6 +54,15 @@ class ModsController {
             res.json({status : 500})
         }
     }
+
+    async findByOrigin_Criteria (req, res) {
+        try {
+            const mod = await Mods.find({originGame : req.query.origin, criteria : req.query.criteria})
+            res.json(mod)
+        } catch (error) {
+            res.json({status : 500})
+        }
+    }
 }
 
 module.exports = new ModsController
