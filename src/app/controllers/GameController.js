@@ -73,6 +73,12 @@ class GameController {
             return element !== "";
         });
         game.linksDownloadSecond = filteredArray2
+
+        let filteredArray3 = game.linksDownloadVN.filter(function(element) {
+            return element !== "";
+        });
+        game.linksDownloadVN = filteredArray3
+        
         game.save()
           .then(() => res.redirect('/'))
           .catch((error) => res.status(500).json({ error: 'Internal server error' }));
@@ -95,6 +101,11 @@ class GameController {
             return element !== "";
         });
         game.linksDownloadSecond = filteredArray2
+
+        let filteredArray3 = game.linksDownloadVN.filter(function(element) {
+            return element !== "";
+        });
+        game.linksDownloadVN = filteredArray3
         
         Game.updateOne({_id : req.body.gameId}, game)
             .then(() => res.redirect('/'))
